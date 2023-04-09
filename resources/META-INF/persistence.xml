@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+			 xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+	<persistence-unit name="hibernate_jpa" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<!-- Determine which element is auto discovered by Hibernate Entity Manager
+			 while parsing the .par archive. (default to class,hbm).
+       		<property name="hibernate.archive.autodetection" value="class" />
+       		-->
+
+			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/animaldb?serverTimezone=UTC" />
+			<property name="hibernate.connection.user" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- If turned on, Hibernate will generate comments inside the SQL, for easier debugging, defaults to false. -->
+			<property name="use_sql_comments" value="true" />
+		</properties>
+	</persistence-unit>
+
+
+</persistence>
